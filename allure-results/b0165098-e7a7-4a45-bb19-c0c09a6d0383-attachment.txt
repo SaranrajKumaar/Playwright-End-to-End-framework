@@ -1,0 +1,4 @@
+[ 'ADIDAS ORIGINAL', 'ZARA COAT 3', 'iphone 13 pro' ]
+699f2ac20ab5a0297749fd71
+Captured OrderID: 699f2ac20ab5a0297749fd71
+699f2ac20ab5a0297749fd71
