@@ -1,42 +1,45 @@
-🚀 Playwright End-to-End Automation Framework
+# 🚀 Playwright End-to-End Automation Framework
 
-A scalable and maintainable Playwright automation framework designed for UI & API testing, following best practices like Page Object Model (POM), reusable utilities, external test data management, retries, parallel execution, and CI/CD integration.
+A scalable and maintainable **Playwright automation framework** designed for **UI & API testing**, following best practices like **Page Object Model (POM)**, reusable utilities, external test data management, retries, parallel execution, tagging, grep filtering, and CI/CD integration.
 
-📌 Overview
+---
 
-This project demonstrates how to build a robust test automation framework using Playwright that supports:
+## 📌 Overview
 
-✅ UI Automation Testing
+This framework demonstrates:
 
-✅ API Testing & Utilities
+- ✅ UI Automation Testing  
+- ✅ API Testing & Utilities  
+- ✅ Data-Driven Testing  
+- ✅ Parallel & Serial Execution  
+- ✅ Retry Mechanism  
+- ✅ Video & Screenshot Capture  
+- ✅ Test Tagging & Filtering  
+- ✅ Grep-based Test Execution  
+- ✅ Allure Reporting  
+- ✅ Jenkins CI/CD Integration  
 
-✅ Data-Driven Testing
+---
 
-✅ Parallel & Serial Execution
+## ✨ Features Implemented
 
-✅ Retry Mechanism
+✔ Page Object Model (POM)  
+✔ API utilities for test data setup & cleanup  
+✔ External test data (Fixtures / JSON / Excel)  
+✔ Parameterized tests  
+✔ Retry for flaky tests  
+✔ Parallel & Serial execution modes  
+✔ Test annotations (`skip`, `only`)  
+✔ Tagged test execution  
+✔ Grep / pattern-based filtering  
+✔ Video & screenshot recording  
+✔ Allure HTML reporting  
+✔ Custom NPM scripts  
+✔ Jenkins integration  
 
-✅ Video & Screenshot Capture
+---
 
-✅ Allure Reporting
-
-✅ Jenkins CI/CD Integration
-
-✨ Features Implemented
-
-✔ Page Object Model (POM)
-✔ API utilities for test data setup & cleanup
-✔ External test data (fixtures / JSON / Excel)
-✔ Parameterized tests
-✔ Retry for flaky tests
-✔ Parallel & Serial execution modes
-✔ Test annotations (skip, only, tagging)
-✔ Video & screenshot recording
-✔ Allure HTML reporting
-✔ Custom NPM scripts
-✔ Jenkins integration
-
-🧱 Framework Architecture
+## 🧱 Framework Architecture
 ├── tests/
 │   ├── playwrightsBasics/
 │   │   ├── APITesting/
@@ -55,55 +58,85 @@ This project demonstrates how to build a robust test automation framework using 
 ├── package.json
 ├── .gitignore
 └── README.md
-📂 Folder Explanation
-Folder / File	Purpose
-tests/	Contains all UI & API test specs
-APITesting/	API test cases & API helpers
-UIControl/	UI automation scenarios
-fixture/	External test data (JSON etc.)
-excel/	Excel-based test data handling
-playwright-report/	Playwright HTML reports
-test-results/	Videos, screenshots, traces
-screenShots/	Stored screenshots
-playwright.config.js	Central test configuration
-package.json	Custom execution scripts
-⚙️ Tech Stack
 
-Playwright
 
-JavaScript / Node.js
+---
 
-Allure Reports
+## ⚙️ Tech Stack
 
-Jenkins (CI/CD)
+- Playwright  
+- JavaScript / Node.js  
+- Allure Reports  
+- Jenkins (CI/CD)  
 
-🚀 Getting Started
-1️⃣ Clone Repository
+---
+
+# 🚀 Getting Started
+
+## 1️⃣ Clone Repository
+
+```bash
 git clone https://github.com/SaranrajKumaar/Playwright-End-to-End-framework.git
 cd Playwright-End-to-End-framework
+
 2️⃣ Install Dependencies
-npm install
+**npm install**
 3️⃣ Run Tests
 
 Run all tests:
 
-npx playwright test
+**npx playwright test**
 
-Run headed:
+Run headed mode:
 
-npx playwright test --headed
+**npx playwright test --headed**
+🏷 Test Tagging
 
-Run specific test:
+Example tagged test:
 
-npx playwright test tests/playwrightsBasics/TestCases/UIControl
+**test('Login test @smoke', async ({ page }) => {**
+  // test steps
+});
+
+Multiple tags:
+
+test('Checkout flow @regression @e2e', async ({ page }) => {
+});
+**🔍 Grep / Tag-Based Execution**
+
+Run only smoke tests:
+
+**npx playwright test --grep @smoke**
+
+Run regression tests:
+
+**npx playwright test --grep @regression**
+
+Run tests matching pattern:
+
+npx playwright test --grep "Login"
+
+Invert grep (exclude tests):
+
+npx playwright test --grep-invert @wip
+🧪 Execution Modes
+
+Run tests in parallel:
+
+npx playwright test --workers=4
+
+Run tests serially:
+
+test.describe.configure({ mode: 'serial' });
 🔁 Retry Mechanism
 
-Retries configured in:
+Configured in:
 
 playwright.config.js
 
-Helps stabilize flaky tests.
+Example:
 
+retries: 1
 🎥 Screenshots & Video Recording
 
 Automatically captured for:
@@ -126,7 +159,7 @@ Open report:
 allure serve
 🌐 API Testing
 
-Framework supports:
+Supports:
 
 ✔ API test execution
 ✔ Data setup via API
@@ -135,24 +168,18 @@ Framework supports:
 Location:
 
 tests/playwrightsBasics/APITesting/
-🧪 Execution Modes
-Mode	Description
-Parallel	Faster execution
-Serial	Ordered execution
-Retries	Handles flaky tests
-🏷 Test Annotations & Tagging
 
-Examples:
+Run only API tests:
 
-test.skip()
-test.only()
-test.describe.configure({ mode: 'serial' })
+npx playwright test --grep @api
 📦 Custom NPM Scripts
 
 Example:
 
 npm run test
 npm run test:headed
+npm run test:smoke
+npm run test:regression
 npm run test:api
 npm run allure:report
 🔄 Jenkins CI/CD Integration
@@ -171,6 +198,10 @@ UI + API automation
 
 Data-driven testing
 
+Tag-based execution
+
+Grep filtering
+
 Retry strategies
 
 Parallel execution
@@ -181,7 +212,7 @@ Reporting & debugging
 
 🤝 Contribution
 
-Feel free to fork & enhance 🚀
+Feel free to fork and enhance 🚀
 
 👨‍💻 Author
 
